@@ -11,11 +11,11 @@ fs.readFile(
         fs.readFile(
             './01-javascript/06-ejemplo.txt',
             'utf-8',
-            (error, contenido1) => {
-                if (error)
-                    console.error({mensaje: 'error leyendo contenido', error: error});
+            (errorInterno, contenido1) => {
+                if (errorInterno)
+                    console.error({mensaje: 'error leyendo contenido', error: errorInterno});
                 else
-                    console.log(contenido+contenido1);
+                    console.log(contenido,contenido1);
             }
         )
     }

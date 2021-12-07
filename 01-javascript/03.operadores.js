@@ -140,3 +140,23 @@ const respuestaEvery = arreglo
         }
     );
 console.log('respuestaEvery', respuestaEvery);
+
+//reduce        izq -> der
+//reduce right  der -> izq
+//100
+//100 - arreglo[0] - arreglo[1] - arreglo[2] - arreglo[3] - arreglo[4] - arreglo[5]
+//arreglo[0] + arreglo[1] + arreglo[2] + arreglo[3] + arreglo[4] = ...
+
+const respuestaReduce = arreglo.reduce(
+    function (valorAcumulado, valorActual, indice, arreglo) {
+        return valorAcumulado - valorActual.nota;
+    },
+    100
+);
+
+console.log("respuestaReduce: 100 - arreglo:", respuestaReduce)
+
+
+
+
+

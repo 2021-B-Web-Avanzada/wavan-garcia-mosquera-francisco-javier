@@ -1,3 +1,4 @@
+
 function soloNumeros(a, b, c) {
     return a - b + c;
 }
@@ -46,13 +47,14 @@ funcionFatArrow3();
 const funcionFatArrow5 = (x) => {
     return x + 1;
 };
-const funcionFatArrow5 = (x) => x + 1;
+//const funcionFatArrow5 = (x) => x + 1;
 
 //omitir parántesis
 const funcionFatArrow7 = x => x + 1;
 const funcionFatArrow8 = (x, y, z) => x + y + z;
 
 //Parámetros infinitos
+
 function sumarNumeros(...otrosNumeros) {
     let total = 0;
     otrosNumeros.forEach(
@@ -62,5 +64,6 @@ function sumarNumeros(...otrosNumeros) {
     );
     return total;
 }
+module.exports = 04;
 
-sumarNumeros(1, 2, 3, 4, 5, 6, 7, 8, 89);
+//sumarNumeros(1, 2, 3, 4, 5, 6, 7, 8, 89);

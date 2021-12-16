@@ -1,10 +1,10 @@
-{
-	"album": {
+[
+	{
 		"titulo": "Comic",
 		"artista": "Comic",
-		"recopilatorio": true,
-		"productor": "George Martin",
-		"anio": 2019,
+		"recopilatorio": false,
+		"productor": "F",
+		"anio": "2020",
 		"canciones": {
 			"cancion": {
 				"titulo": "I saw her standing there",
@@ -20,19 +20,19 @@
 			}
 		}
 	},
-	"album1": {
-		"titulo": "Please Please ME",
-		"artista": "Comic",
+	{
+		"titulo": "1",
+		"artista": "Beatles",
 		"recopilatorio": true,
-		"productor": "George Martin",
-		"anio": 1964,
-		"canciones": {
-			"cancion3": {
-				"titulo": "Love Me Do",
-				"explicito": false,
-				"duracion": 120,
-				"artistaSecundario": null
+		"productor": "Martin",
+		"anio": "2006",
+		"canciones": [
+			{
+				"titulo": "Love",
+				"explicito": true,
+				"duracion": 45,
+				"artistaSecundario": ""
 			}
-		}
+		]
 	}
-}
+]

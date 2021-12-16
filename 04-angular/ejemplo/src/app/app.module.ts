@@ -10,8 +10,13 @@ import { RutaInicioComponent } from './rutas/ruta-inicio/ruta-inicio.component';
 import { RutaUsuarioComponent } from './rutas/ruta-usuario/ruta-usuario.component';
 import { RutaPostComponent } from './rutas/ruta-post/ruta-post.component';
 import { RutaAppComponent } from './rutas/ruta-app/ruta-app.component';
+import {EstaLogueadoGuard} from "./servicios/auth/esta-logueado.guard";
+import {AuthService} from "./servicios/auth/auth.service";
+
 
 @NgModule({
+
+  //componentes
   declarations: [
     AppComponent,
     RutaLoginComponent,
@@ -22,11 +27,20 @@ import { RutaAppComponent } from './rutas/ruta-app/ruta-app.component';
     RutaPostComponent,
     RutaAppComponent
   ],
+
+  //modulos
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+
+  //servicios
+  providers: [
+    AuthService,
+    EstaLogueadoGuard
+  ],
+
+  //componente principal, aquí empieza todo
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,28 +13,9 @@ module.exports = {
     },
     read: function (path) {
         let contenido
-        fs.readFile(
-            path,
-            'utf-8',
-            (errorInterno, contenidoL) => {
-                if (errorInterno)
-                    console.error({mensaje: 'error leyendo contenido', error: errorInterno});
-                else {
-                    contenido = contenidoL
-                }
-            }
-        )
-        return contenido;
+        return fs.readFileSync(path,{encoding:'utf8', flag:'r'})
     },
     update: function (path, nuevoContenido) {
-        fs.writeFile(
-            path,
-            nuevoContenido,
-            'utf-8',
-            (error) => {
-                if (error)
-                    console.error({mensaje: 'error escribiendo contenido', error: error});
-            }
-        )
+        fs.writeFileSync(path,nuevoContenido)
     }
 }

@@ -1,5 +1,6 @@
 const crud = require('./crud')
 const inquirer = require("inquirer");
+pathArchivo = "C:\\Users\\franc\\Documents\\GitHub\\wavan-garcia-mosquera-francisco-javier\\01-deber\\album.json"
 
 let album = {
     titulo: "",
@@ -7,7 +8,13 @@ let album = {
     recopilatorio: undefined,//boolean/undefined
     productor: "",
     anio: null,//number,
-    cancion: []
+    canciones: []
+};
+let cancion = {
+    titulo: "",
+    duracion: "",
+    explicito: undefined,//boolean/undefined
+    artistaSecundario: ""
 };
 
 
@@ -15,7 +22,7 @@ let album = {
 //canciones
 //retorna cadena
 function mostrarListaDeCanciones() {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
 
@@ -49,7 +56,7 @@ function mostrarListaDeCanciones() {
 //indice desde 0
 //retorna cadena
 function mostrarCancion(indiceDeCancion) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
 
@@ -70,7 +77,6 @@ function mostrarCancion(indiceDeCancion) {
                     indiceAcumulador += 1
                 }
             )
-            indiceAcumulador += 1
         }
     );
     return cancion[0]
@@ -79,7 +85,7 @@ function mostrarCancion(indiceDeCancion) {
 
 //objeto canción y el índice del álbum donde tengo que pushear
 function crearCancion(cancionCreada, indiceDeAlbum) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
 
@@ -92,7 +98,7 @@ function crearCancion(cancionCreada, indiceDeAlbum) {
                 listaDeAlbums.at(indiceActual).canciones = aux
                 const objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
                 //console.log(objetoJSONNuevo)
-                crud.update("/01-deber/album.json", objetoJSONNuevo)
+                crud.update(pathArchivo, objetoJSONNuevo)
             }
         }
     );
@@ -100,7 +106,7 @@ function crearCancion(cancionCreada, indiceDeAlbum) {
 
 //objeto canción y el índice de la canción que tengo que reemplazar
 function actualizarCancion(cancion, indiceDeCancion) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
 
@@ -120,7 +126,7 @@ function actualizarCancion(cancion, indiceDeCancion) {
                         listaDeAlbums.at(indiceActual).canciones = aux
                         const objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
                         //console.log(objetoJSONNuevo)
-                        crud.update("/01-deber/album.json", objetoJSONNuevo)
+                        crud.update(pathArchivo, objetoJSONNuevo)
                     }
                     indiceAcumulador += 1
                 }
@@ -131,7 +137,7 @@ function actualizarCancion(cancion, indiceDeCancion) {
 
 //indice de la cancion a eliminar
 function eliminarCancion(indiceDeCancion) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     let listaDeAlbums = Object.values(objetoArchivoJSON)
     //Indices de este arreglo nos dicen cual álbum es
@@ -145,7 +151,7 @@ function eliminarCancion(indiceDeCancion) {
                         aux.splice(indiceActual, 1)
                         listaDeAlbums.at(indiceActualAlbum).canciones = aux
                         const objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
-                        crud.update("/01-deber/album.json", objetoJSONNuevo)
+                        crud.update(pathArchivo, objetoJSONNuevo)
                     }
                     indiceAcumulador += 1
                 }
@@ -157,7 +163,7 @@ function eliminarCancion(indiceDeCancion) {
 
 //álbums
 function mostrarListaDeAlbums() {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
 
@@ -172,7 +178,7 @@ function mostrarListaDeAlbums() {
 //indice de album a mostrar
 //retorna string con el album
 function mostrarAlbum(indiceAlbum) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
     let nombreListaDeAlbums = []
@@ -185,7 +191,7 @@ function mostrarAlbum(indiceAlbum) {
 }
 
 function crearAlbum(datosDeAlbum) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
     let albumAux = album
@@ -198,15 +204,14 @@ function crearAlbum(datosDeAlbum) {
     listaDeAlbums.push(albumAux)
     const objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
     //console.log(objetoJSONNuevo)
-    crud.update("/01-deber/album.json", objetoJSONNuevo)
+    crud.update(pathArchivo, objetoJSONNuevo)
 }
 
 //no se podrá actualizar las canciones desde aquí
 function actualizarAlbum(datosDeAlbum, indiceDeAlbum) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
-
 
     listaDeAlbums.forEach(function (valorActual, indiceActual) {
             if (indiceActual == indiceDeAlbum) {
@@ -216,9 +221,9 @@ function actualizarAlbum(datosDeAlbum, indiceDeAlbum) {
                 valorActual.productor = datosDeAlbum.productor
                 valorActual.anio = datosDeAlbum.anio
                 listaDeAlbums.splice(indiceActual, 1, valorActual)
-                const objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
+                let objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
                 //console.log(objetoJSONNuevo)
-                crud.update("/01-deber/album.json", objetoJSONNuevo)
+                crud.update(pathArchivo, objetoJSONNuevo)
             }
 
         }
@@ -226,7 +231,7 @@ function actualizarAlbum(datosDeAlbum, indiceDeAlbum) {
 }
 
 function eliminarAlbum(indiceDeAlbum) {
-    const contenidoArchivoJSON = crud.read("/01-deber/album.json")
+    const contenidoArchivoJSON = crud.read(pathArchivo)
     const objetoArchivoJSON = JSON.parse(contenidoArchivoJSON)
     const listaDeAlbums = Object.values(objetoArchivoJSON)
     let nombreListaDeAlbums = []
@@ -235,14 +240,41 @@ function eliminarAlbum(indiceDeAlbum) {
                 listaDeAlbums.splice(indiceActual, 1)
                 const objetoJSONNuevo = JSON.stringify(listaDeAlbums, null, "\t")
                 //console.log(objetoJSONNuevo)
-                crud.update("/01-deber/album.json", objetoJSONNuevo)
+                crud.update(pathArchivo, objetoJSONNuevo)
             }
 
         }
     );
 }
 
+function verNumeroDeAlbum(album) {
+    let albums = mostrarListaDeAlbums()
+    let numeroDeAlbum
+    for (let indice in albums) {
+        if (album.nombre == albums.at(indice)) {
+            numeroDeAlbum = indice
+            break;
+        }
+    }
+    return numeroDeAlbum
+}
 
-module.exports = {mostrarCancion,actualizarAlbum,actualizarCancion,
-    eliminarAlbum,eliminarCancion,mostrarListaDeAlbums,
-    mostrarListaDeCanciones,mostrarAlbum,crearAlbum,crearCancion};
+function verNumeroDeCancion(cancion) {
+    let canciones = mostrarListaDeCanciones()
+    let numeroDeCancion
+    for (let indice in canciones) {
+        if (cancion.nombre == canciones.at(indice)) {
+            numeroDeCancion = indice
+            break;
+        }
+    }
+    return numeroDeCancion
+}
+
+
+module.exports = {
+    mostrarCancion, actualizarAlbum, actualizarCancion,
+    eliminarAlbum, eliminarCancion, mostrarListaDeAlbums,
+    mostrarListaDeCanciones, mostrarAlbum, crearAlbum, crearCancion,
+    verNumeroDeAlbum,verNumeroDeCancion
+};

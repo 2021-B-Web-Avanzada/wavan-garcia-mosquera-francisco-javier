@@ -12,6 +12,7 @@ import { RutaPostComponent } from './rutas/ruta-post/ruta-post.component';
 import { RutaAppComponent } from './rutas/ruta-app/ruta-app.component';
 import {EstaLogueadoGuard} from "./servicios/auth/esta-logueado.guard";
 import {AuthService} from "./servicios/auth/auth.service";
+import {EsAdministradorGuard} from "./servicios/auth/es-administrador.guard";
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {AuthService} from "./servicios/auth/auth.service";
   //servicios
   providers: [
     AuthService,
-    EstaLogueadoGuard
+    EstaLogueadoGuard,
+    EsAdministradorGuard
   ],
 
   //componente principal, aquí empieza todo

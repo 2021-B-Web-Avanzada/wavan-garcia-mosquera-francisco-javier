@@ -36,7 +36,7 @@ app.get('/cancion/:id', (req, res) => {
     }
 })
 
-//http://localhost:3000/album/NEU!&Pink Floyd&false&Rubin&1975
+//http://localhost:3000/album/NEU!&PinkFloyd&false&Rubin&1975
 app.post('/album/:titulo&:artista&:recopilatorio&:productor&:anio', (req, res) => {
     let titulo = req.params.titulo
     let artista = req.params.artista
@@ -88,23 +88,60 @@ app.post('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:indiceAlbum'
         );
     }
 })
-app.put('/:id', (req, res) => {
-    const {id} = req.params;
-    const {title, director, year, rating} = req.body;
-    if (title && director && year && rating) {
-        _.each(data, (movie, i) => {
-            if (movie.id == id) {
-                movie.title = title;
-                movie.director = director;
-                movie.year = year;
-                movie.rating = rating;
+
+//http://localhost:3000/cancion/MySweetLord&456&false&false&1
+app.put('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:cancionAActualizar', (req, res) => {
+    let titulo = req.params.titulo
+    let duracion = Number(req.params.duracion)
+    let explicito = req.params.explicito
+    let artistaSecundario = req.params.artistaSecundario
+    let cancionAActualizar = Number(req.params.cancionAActualizar)
+
+    try {
+        let datosCancion={
+            titulo: titulo,
+            duracion: duracion,
+            explicito: explicito,
+            artistaSecundario: artistaSecundario
+        }
+        controlador.actualizarCancion(datosCancion, cancionAActualizar)
+        res.json(controlador.mostrarCancion(cancionAActualizar))
+    } catch (e) {
+        res.json(
+            {
+                "error": "Error al actualizar canción"
             }
-        });
-        res.json(data);
-    } else {
-        res.status(500).json({"error": "There was an error."});
+        );
     }
-});
+})
+
+//http://localhost:3000/album/NEU!&PinkFloyd&false&Rubin&1975&1
+app.put('/album/:titulo&:artista&:recopilatorio&:productor&:anio&:albumAActualizar', (req, res) => {
+    let titulo = req.params.titulo
+    let artista = req.params.artista
+    let recopilatorio = Boolean(req.params.recopilatorio)
+    let productor = req.params.productor
+    let anio = Number(req.params.anio)
+    let albumAActualizar = Number(req.params.albumAActualizar)
+
+    try {
+        let datosAlbum={
+            titulo: titulo,
+            artista: artista,
+            recopilatorio: recopilatorio,
+            productor: productor,
+            anio: anio
+        }
+        controlador.actualizarAlbum(datosAlbum,albumAActualizar)
+        res.json(controlador.mostrarListaDeAlbums());
+    } catch (e) {
+        res.json(
+            {
+                "error": "Error al actualizar album"
+            }
+        );
+    }
+})
 
 //http://localhost:3000/cancion/1
 app.delete('/cancion/:id', (req, res) => {

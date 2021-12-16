@@ -1,5 +1,29 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "express": "^4.17.1",
+    "inquirer": "^8.2.0",
+    "morgan": "^1.10.0"
+  },
+  "name": "wavan-garcia-mosquera-francisco-javier",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2021-B-Web-Avanzada/wavan-garcia-mosquera-francisco-javier.git"
+  },
+  "dev": "nodemon 01-deber/index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2021-B-Web-Avanzada/wavan-garcia-mosquera-francisco-javier/issues"
+  },
+  "homepage": "https://github.com/2021-B-Web-Avanzada/wavan-garcia-mosquera-francisco-javier#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

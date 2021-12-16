@@ -1,0 +1,38 @@
+[
+	{
+		"titulo": "Comic",
+		"artista": "Comic",
+		"recopilatorio": false,
+		"productor": "F",
+		"anio": "2020",
+		"canciones": {
+			"cancion": {
+				"titulo": "I saw her standing there",
+				"explicito": false,
+				"duracion": 173,
+				"artistaSecundario": null
+			},
+			"cancion1": {
+				"titulo": "Boys",
+				"explicito": false,
+				"duracion": 146,
+				"artistaSecundario": "Star"
+			}
+		}
+	},
+	{
+		"titulo": "1",
+		"artista": "Beatles",
+		"recopilatorio": true,
+		"productor": "Martin",
+		"anio": "2006",
+		"canciones": [
+			{
+				"titulo": "Love",
+				"explicito": true,
+				"duracion": 45,
+				"artistaSecundario": ""
+			}
+		]
+	}
+]

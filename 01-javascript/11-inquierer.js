@@ -1,4 +1,5 @@
 const inquirer = require('inquirer')
+var funciones = require('./04-funciones')
 
 async function main(){
     try{
@@ -20,5 +21,6 @@ async function main(){
         console.error(e)
     }
 }
-
+let suma=funciones.sumarNumeros(4,5,65,5)
+console.log("suma",suma)
 main()

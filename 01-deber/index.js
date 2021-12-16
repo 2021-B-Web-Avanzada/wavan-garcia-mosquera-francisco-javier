@@ -93,7 +93,7 @@ app.post('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:indiceAlbum'
 app.put('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:cancionAActualizar', (req, res) => {
     let titulo = req.params.titulo
     let duracion = Number(req.params.duracion)
-    let explicito = req.params.explicito
+    let explicito = Boolean(req.params.explicito)
     let artistaSecundario = req.params.artistaSecundario
     let cancionAActualizar = Number(req.params.cancionAActualizar)
 

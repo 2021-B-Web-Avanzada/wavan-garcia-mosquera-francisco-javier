@@ -8,6 +8,32 @@ const controlador = require('./controlador')
 app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2)
 
+//http://localhost:3000/album/
+app.get('/album/', (req, res) => {
+    try {
+        res.json(JSON.parse(controlador.mostrarListaDeAlbums()));
+    } catch (e) {
+        res.json(
+            {
+                "error": "Error al mostrar albums"
+            }
+        );
+    }
+})
+
+//http://localhost:3000/cancion/
+app.get('/cancion/', (req, res) => {
+    try {
+        res.json(controlador.mostrarListaDeCanciones());
+    } catch (e) {
+        res.json(
+            {
+                "error": "Error al mostrar canciones"
+            }
+        );
+    }
+})
+
 //http://localhost:3000/album/1
 app.get('/album/:id', (req, res) => {
     let album = req.params.id;

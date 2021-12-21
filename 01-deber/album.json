@@ -34,5 +34,20 @@
 				"artistaSecundario": ""
 			}
 		]
+	},
+	{
+		"titulo": "Ok Computer",
+		"artista": "Radiohead",
+		"recopilatorio": false,
+		"productor": "Giles MArtin",
+		"anio": 1997,
+		"canciones": [
+			{
+				"titulo": "Paranoid Android",
+				"explicito": true,
+				"duracion": 456,
+				"artistaSecundario": "Lil Nas X"
+			}
+		]
 	}
 ]

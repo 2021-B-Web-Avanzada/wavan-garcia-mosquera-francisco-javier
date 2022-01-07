@@ -1,7 +1,5 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
-const inquirer = require("inquirer");
 const controlador = require('./controlador')
 
 //Configuraciones
@@ -11,7 +9,7 @@ app.set('json spaces', 2)
 //http://localhost:3000/album/
 app.get('/album/', (req, res) => {
     try {
-        res.json(JSON.parse(controlador.mostrarListaDeAlbums()));
+        res.json(controlador.mostrarListaDeAlbums());
     } catch (e) {
         res.json(
             {
@@ -192,7 +190,7 @@ app.delete('/cancion/:id', (req, res) => {
 app.delete('/album/:id', (req, res) => {
     let albumAEliminar = req.params.id;
     try {
-        controlador.eliminarCancion(albumAEliminar);
+        controlador.eliminarAlbum(albumAEliminar);
         res.json(
             {
                 "response": "album eliminado"

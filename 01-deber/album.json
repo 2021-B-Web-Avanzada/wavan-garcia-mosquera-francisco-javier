@@ -1,53 +1,33 @@
 [
 	{
-		"titulo": "Comic",
-		"artista": "Comic",
+		"titulo": "Cuartos de Atrás",
+		"artista": "Beatles",
 		"recopilatorio": false,
-		"productor": "F",
-		"anio": "2020",
-		"canciones": {
-			"cancion": {
-				"titulo": "I saw her standing there",
-				"explicito": false,
-				"duracion": 173,
-				"artistaSecundario": null
-			},
-			"cancion1": {
-				"titulo": "Boys",
-				"explicito": false,
-				"duracion": 146,
-				"artistaSecundario": "Star"
-			}
-		}
+		"productor": "Martin",
+		"anio": 1964,
+		"canciones": []
 	},
 	{
-		"titulo": "1",
+		"titulo": "Love",
 		"artista": "Beatles",
+		"recopilatorio": false,
+		"productor": "Mertin",
+		"anio": 2007,
+		"canciones": [
+			{
+				"titulo": "Airbag",
+				"explicito": true,
+				"duracion": 56,
+				"artistaSecundario": null
+			}
+		]
+	},
+	{
+		"titulo": "Kid A",
+		"artista": "Radiohead",
 		"recopilatorio": true,
 		"productor": "Martin",
-		"anio": "2006",
-		"canciones": [
-			{
-				"titulo": "Love",
-				"explicito": true,
-				"duracion": 45,
-				"artistaSecundario": ""
-			}
-		]
-	},
-	{
-		"titulo": "Ok Computer",
-		"artista": "Radiohead",
-		"recopilatorio": false,
-		"productor": "Giles MArtin",
-		"anio": 1997,
-		"canciones": [
-			{
-				"titulo": "Paranoid Android",
-				"explicito": true,
-				"duracion": 456,
-				"artistaSecundario": "Lil Nas X"
-			}
-		]
+		"anio": 2000,
+		"canciones": []
 	}
 ]

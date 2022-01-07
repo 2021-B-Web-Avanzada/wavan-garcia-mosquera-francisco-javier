@@ -1,0 +1,28 @@
+<h1 [ngStyle]="{
+'background-color': '#000',
+'color':color,
+'border' : 'solid 5px' + color
+}"
+>Hola desde banner</h1>
+
+<!--Interpolación!-->
+<h2>{{nombre}} - {{apellido}}</h2>
+
+<p>Mascota: {{mascotas.cachetes.edad}}</p>
+
+<!--Property binding [] !-->
+<img [src]="urlImagen" class="img-fluid" alt="comic">
+<a [href] ="url">
+  Más Información
+</a>
+
+<!--Event Binding!-->
+<button (click)="ejecutarEventoClick()"
+        (blur)="ejecutarEventoBlur()"
+>
+  Event Binding
+</button>
+
+<!--pipes!-->
+<p>{{fecha | date:'dd-MM-YYYY'}}</p>
+<p>{{sueldo | currency}}</p>

@@ -1,12 +1,36 @@
 const express = require('express');
 const app = express();
-const morgan = require('morgan');
-const inquirer = require("inquirer");
 const controlador = require('./controlador')
 
 //Configuraciones
 app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2)
+
+//http://localhost:3000/album/
+app.get('/album/', (req, res) => {
+    try {
+        res.json(controlador.mostrarListaDeAlbums());
+    } catch (e) {
+        res.json(
+            {
+                "error": "Error al mostrar albums"
+            }
+        );
+    }
+})
+
+//http://localhost:3000/cancion/
+app.get('/cancion/', (req, res) => {
+    try {
+        res.json(controlador.mostrarListaDeCanciones());
+    } catch (e) {
+        res.json(
+            {
+                "error": "Error al mostrar canciones"
+            }
+        );
+    }
+})
 
 //http://localhost:3000/album/1
 app.get('/album/:id', (req, res) => {
@@ -166,7 +190,7 @@ app.delete('/cancion/:id', (req, res) => {
 app.delete('/album/:id', (req, res) => {
     let albumAEliminar = req.params.id;
     try {
-        controlador.eliminarCancion(albumAEliminar);
+        controlador.eliminarAlbum(albumAEliminar);
         res.json(
             {
                 "response": "album eliminado"

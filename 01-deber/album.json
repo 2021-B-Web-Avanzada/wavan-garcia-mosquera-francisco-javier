@@ -1,38 +1,33 @@
 [
 	{
-		"titulo": "Comic",
-		"artista": "Comic",
+		"titulo": "Cuartos de Atrás",
+		"artista": "Beatles",
 		"recopilatorio": false,
-		"productor": "F",
-		"anio": "2020",
-		"canciones": {
-			"cancion": {
-				"titulo": "I saw her standing there",
-				"explicito": false,
-				"duracion": 173,
-				"artistaSecundario": null
-			},
-			"cancion1": {
-				"titulo": "Boys",
-				"explicito": false,
-				"duracion": 146,
-				"artistaSecundario": "Star"
-			}
-		}
+		"productor": "Martin",
+		"anio": 1964,
+		"canciones": []
 	},
 	{
-		"titulo": "1",
+		"titulo": "Love",
 		"artista": "Beatles",
-		"recopilatorio": true,
-		"productor": "Martin",
-		"anio": "2006",
+		"recopilatorio": false,
+		"productor": "Mertin",
+		"anio": 2007,
 		"canciones": [
 			{
-				"titulo": "Love",
+				"titulo": "Airbag",
 				"explicito": true,
-				"duracion": 45,
-				"artistaSecundario": ""
+				"duracion": 56,
+				"artistaSecundario": null
 			}
 		]
+	},
+	{
+		"titulo": "Kid A",
+		"artista": "Radiohead",
+		"recopilatorio": true,
+		"productor": "Martin",
+		"anio": 2000,
+		"canciones": []
 	}
 ]

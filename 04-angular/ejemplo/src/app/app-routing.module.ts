@@ -24,8 +24,14 @@ const routes: Routes = [
     component: RutaLoginComponent,
   },
   {
+    path:'lazy-inventario',
+    loadChildren: () => import('./modulos/modulo-inventario/modulo-inventario.module')
+      .then(m=> m.ModuloInventarioModule)
+  },
+  {
     path: 'app',
     component: RutaAppComponent,
+    canActivate: [EsAdministradorGuard],
     children: [
       {
         path: 'usuario',
@@ -33,8 +39,7 @@ const routes: Routes = [
       },
       {
         path: 'post',
-        component: RutaPostComponent,
-        canActivate: [EsAdministradorGuard]
+        component: RutaPostComponent
       }
     ]
   },

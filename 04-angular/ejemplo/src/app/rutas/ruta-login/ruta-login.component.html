@@ -1,6 +1,5 @@
 <h1>NG FOR</h1>
 <div *ngFor="let usuario of arregloUsuarios; let i = index">
-<!--  <p>{{i}} - {{usuario.id}} - {{usuario.nombre}}</p>-->
   <app-banner-imagenes [color]="usuario.color"
                        [url]="usuario.link"
                        [urlImagen]="usuario.linkImagen">

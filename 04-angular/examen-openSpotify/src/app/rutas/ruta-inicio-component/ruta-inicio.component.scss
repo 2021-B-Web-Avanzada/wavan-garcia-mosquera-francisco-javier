@@ -35,21 +35,6 @@ body {
   width: calc(100% - 230px);
 }
 
-/*
-.upgrade .btn_upgrade {
-  margin-top: 15px;
-}
-
-.upgrade .btn_upgrade span {
-  font-weight: 700;
-}
-
-.upgrade .btn_upgrade img {
-  margin-right: 10px;
-  border-radius: 50%;
-  vertical-align: middle;
-}*/
-
 .upgrade .retornos{
   margin-right:780px;
   margin-left: 15px;
@@ -191,59 +176,28 @@ body {
   width: 100%;
 }
 
-
-.box_main .music .box_recomendacion {
-  position: relative;
-  display: inline-flex;
-  width: calc(100% / 3 - 20px);
-  margin: 10px;
-  border-radius: 10px;
-  background-color: rgb(35, 35, 35);
-  text-align: center;
+.box_main .music .recently_played{
+  width: content-box;
+  margin-left: 7%;
 }
 
-.box_main .music .box_recomendacion h3{
+.recomendacion_iteracion{
+  width:  calc(100% / 3 - 20px);
   display: inline-block;
-  box-sizing: content-box;
-  margin-left: 10px;
 }
-
-.box_main .music .box_recomendacion::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  content: '';
-  background-color: rgba(76, 76, 76, 0.3);
-  display: none;
-}
-
-.box_main .music .box_recomendacion:hover::before {
+.boton_iteracion{
+  width:  calc(100% / 4 - 20px);
   display: inline-block;
 }
 
-.box_main .music .box_recomendacion::after {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  content: '\f144';
-  //font-family: 'Font Awesome 5 Free';
-  font-family: 'Open Sans', sans-serif;
-  font-size: 40px;
-  font-weight: 900;
+.tarjeta{
+  align-content: center;
+  margin-left: 7%;
+}
+.tarjeta h2{
+  display: inline-block;
+}
+.tarjeta a{
+  margin-left: 75%;
   color: #ffffff;
-  display: none;
-}
-
-.box_main .music .box_recomendacion:hover::after {
-  display: inline-block;
-}
-
-.box_main .music .box_recomendacion img {
-  width:80px;
-  height: 80px;
-  border-radius: 10px;
 }

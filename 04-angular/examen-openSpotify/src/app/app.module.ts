@@ -9,11 +9,11 @@ import { BotonSeccionComponent } from './componentes/boton-seccion/boton-seccion
 import { BotonRecomendacionInicialComponent } from './componentes/boton-recomendacion-inicial/boton-recomendacion-inicial.component';
 import { TarjetaRecomendacionComponent } from './componentes/tarjeta-recomendacion/tarjeta-recomendacion.component';
 import { BotonRecomendacionComunComponent } from './componentes/boton-recomendacion-comun/boton-recomendacion-comun.component';
-import { CarruselRecomendacionGeneroComponent } from './componentes/carrusel-recomendacion-genero/carrusel-recomendacion-genero.component';
 import { BotonRecomendacionGeneroComponent } from './componentes/boton-recomendacion-genero/boton-recomendacion-genero.component';
 import { BotonComunGeneroComponent } from './componentes/boton-comun-genero/boton-comun-genero.component';
 import { RutaInicioComponent } from './rutas/ruta-inicio-component/ruta-inicio.component';
 import { RutaBuscarComponent } from './rutas/ruta-buscar-component/ruta-buscar.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { RutaBuscarComponent } from './rutas/ruta-buscar-component/ruta-buscar.c
     BotonRecomendacionInicialComponent,
     TarjetaRecomendacionComponent,
     BotonRecomendacionComunComponent,
-    CarruselRecomendacionGeneroComponent,
     BotonRecomendacionGeneroComponent,
     BotonComunGeneroComponent,
     RutaInicioComponent,
@@ -32,7 +31,8 @@ import { RutaBuscarComponent } from './rutas/ruta-buscar-component/ruta-buscar.c
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

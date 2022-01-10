@@ -1,1 +1,11 @@
-<p>tarjeta-recomendacion works!</p>
+<div class="tarjeta">
+  <h2 [textContent]="tituloTarjeta"></h2>
+  <a>Ver más</a><br>
+  <div class="boton_iteracion" *ngFor="let primeraFila of arregloPrimeraFila; let i = index">
+    <app-boton-recomendacion-comun [titulo]="primeraFila.titulo"
+                                   [urlImagen]="primeraFila.urlImagen"
+                                   [descripcion]="primeraFila.descripcion"
+                                   [bordeStyle]="primeraFila.bordeStyle">
+    </app-boton-recomendacion-comun>
+  </div>
+</div>

@@ -35,21 +35,6 @@ body {
   width: calc(100% - 230px);
 }
 
-/*
-.upgrade .btn_upgrade {
-  margin-top: 15px;
-}
-
-.upgrade .btn_upgrade span {
-  font-weight: 700;
-}
-
-.upgrade .btn_upgrade img {
-  margin-right: 10px;
-  border-radius: 50%;
-  vertical-align: middle;
-}*/
-
 .upgrade .retornos{
   margin-right:780px;
   margin-left: 15px;
@@ -191,4 +176,28 @@ body {
   width: 100%;
 }
 
+.box_main .music .recently_played{
+  width: content-box;
+  margin-left: 7%;
+}
 
+.recomendacion_iteracion{
+  width:  calc(100% / 3 - 20px);
+  display: inline-block;
+}
+.boton_iteracion{
+  width:  calc(100% / 4 - 20px);
+  display: inline-block;
+}
+
+.tarjeta{
+  align-content: center;
+  margin-left: 7%;
+}
+.tarjeta h2{
+  display: inline-block;
+}
+.tarjeta a{
+  margin-left: 75%;
+  color: #ffffff;
+}

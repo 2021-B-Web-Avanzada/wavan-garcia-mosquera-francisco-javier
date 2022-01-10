@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-boton-recomendacion-inicial',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./boton-recomendacion-inicial.component.scss']
 })
 export class BotonRecomendacionInicialComponent implements OnInit {
+
+  @Input()
+  urlImagen="assets/img/album/loud-like-love.jpg"
+
+  @Input()
+  titulo="Titulo Genérico"
+
 
   constructor() { }
 

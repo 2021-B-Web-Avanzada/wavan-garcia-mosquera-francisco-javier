@@ -35,8 +35,28 @@ body {
   width: calc(100% - 230px);
 }
 
+
+.upgrade .busqueda{
+  background-color: white;
+  border-radius: 90px 90px 90px 90px ;
+  margin-right: 355px;
+  width: 400px;
+  visibility: visible;
+}
+.upgrade .busqueda svg{
+  margin-left: 10px;
+  width: fit-content;
+}
+
+.upgrade .busqueda .inputBusqueda{
+  width: 100px;
+}
+.upgrade .busqueda input:focus{
+  outline: none;
+}
+
 .upgrade .retornos{
-  margin-right:780px;
+  margin-right:80px;
   margin-left: 15px;
 }
 

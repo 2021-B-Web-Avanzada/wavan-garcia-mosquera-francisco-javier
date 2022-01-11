@@ -97,7 +97,7 @@ body {
   width: 2.5px;
   height: 32px;
   border-radius: 2px;
-  background-color: #1ed760;
+  //background-color: #1ed760;
 }
 
 /* nav_bar_top middle */
@@ -124,12 +124,13 @@ body {
 }
 
 .nav_bar_top .middle .playlist li {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 /* nav_bar_top bottom */
 .nav_bar_top .bottom .btn_install {
   padding-bottom: 10px;
+  margin-top: 40px;
   border-bottom: 1px solid #ffffff;
 }
 

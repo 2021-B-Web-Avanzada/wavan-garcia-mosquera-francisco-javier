@@ -78,11 +78,11 @@ export class RutaInicioComponent implements OnInit {
     },
     {
       id: 2,
-      tituloTarjeta: 'Artistas que amas'
+      tituloTarjeta: 'Lo que escuchan tus amigos'
     },
     {
       id: 3,
-      tituloTarjeta: 'Hecha para ti'
+      tituloTarjeta: 'Nostalgia'
     },
     {
       id: 4,

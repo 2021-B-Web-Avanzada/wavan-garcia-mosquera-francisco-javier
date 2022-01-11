@@ -29,11 +29,20 @@ body {
 .tarjeta{
   align-content: center;
   margin-left: 7%;
+  margin-top: 40px;
 }
 .tarjeta h2{
+  text-align: start;
   display: inline-block;
+  margin-left: 7px;
 }
-.tarjeta a{
-  margin-left: 75%;
+.tarjeta p{
+  text-align: end;
   color: #ffffff;
+  display: inline-block;
+  float: right;
+  margin-right: 95px;
+}
+.tarjeta .encabezado{
+  width: 100%;
 }

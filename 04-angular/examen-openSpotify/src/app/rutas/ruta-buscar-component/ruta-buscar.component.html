@@ -16,7 +16,8 @@
   <div class="explorar">
     <h3>Explorar todo</h3>
     <div class="tarjetas" *ngFor="let tarjeta of arregloGeneros; let i = index">
-      <app-boton-comun-genero></app-boton-comun-genero>
+      <app-boton-comun-genero [urlImagen]="tarjeta.src">
+      </app-boton-comun-genero>
     </div>
   </div>
 </section>

@@ -24,7 +24,8 @@
         </div>
       </div>
     <div class="tarjetas" *ngFor="let tarjeta of arregloTarjetas; let i = index">
-      <app-tarjeta-recomendacion [tituloTarjeta]="tarjeta.tituloTarjeta">
+      <app-tarjeta-recomendacion [tituloTarjeta]="tarjeta.tituloTarjeta"
+                                 [arregloPrimeraFila]="tarjeta.contenido">
       </app-tarjeta-recomendacion>
     </div>
 

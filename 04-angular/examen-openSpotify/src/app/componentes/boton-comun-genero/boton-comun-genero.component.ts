@@ -8,13 +8,8 @@ import {Component, Input, OnInit} from '@angular/core';
 export class BotonComunGeneroComponent implements OnInit {
 
   @Input()
-  urlImagen="assets/img/album/loud-like-love.jpg"
+  urlImagen=''
 
-  @Input()
-  descripcion="Descripción Genérica"
-
-  @Input()
-  bordeStyle="border-radius:50%"
 
   constructor() { }
 

@@ -16,12 +16,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
+
     ReproductorComponent,
     MenuLateralComponent,
     BotonRecomendacionInicialComponent,
     TarjetaRecomendacionComponent,
     BotonRecomendacionComunComponent,
     BotonComunGeneroComponent,
+
     RutaInicioComponent,
     RutaBuscarComponent
   ],

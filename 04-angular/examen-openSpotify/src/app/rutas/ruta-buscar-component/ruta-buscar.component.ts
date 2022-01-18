@@ -9,66 +9,63 @@ import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
   providers: [NgbCarouselConfig]
 })
 export class RutaBuscarComponent implements OnInit {
-  images = [700, 533, 807, 124].map((n) => `https://picsum.photos/id/${n}/900/500`);
+
 
   //constructor() {}
   arregloGeneros = [
     {
-      id:1
+      id:1,
+      src:'/assets/img/genero/9.JPG'
     },
     {
-      id:2
+      id:2,
+      src:'/assets/img/genero/1.JPG'
     },
     {
-      id:3
+      id:3,
+      src:'/assets/img/genero/2.JPG'
     },
     {
-      id:4
+      id:3,
+      src:'/assets/img/genero/3.JPG'
     },
     {
-      id:5
+      id:3,
+      src:'/assets/img/genero/4.JPG'
     },
     {
-      id:6
+      id:3,
+      src:'/assets/img/genero/5.JPG'
     },
     {
-      id:7
+      id:3,
+      src:'/assets/img/genero/6.JPG'
     },
     {
-      id:8
+      id:3,
+      src:'/assets/img/genero/7.JPG'
     },
     {
-      id:1
+      id:3,
+      src:'/assets/img/genero/8.JPG'
     },
     {
-      id:2
+      id:3,
+      src:'/assets/img/genero/10.JPG'
     },
     {
-      id:3
+      id:3,
+      src:'/assets/img/genero/11.JPG'
     },
+
     {
-      id:4
-    },
-    {
-      id:5
-    },
-    {
-      id:6
-    },
-    {
-      id:7
-    },
-    {
-      id:8
+      id:3,
+      src:'/assets/img/genero/13.JPG'
     }
   ];
 
   constructor(config: NgbCarouselConfig) {
-    config.interval = 100000;
-    config.wrap = false;
-    config.keyboard = false;
-    config.pauseOnHover = false;
-    config.showNavigationIndicators=false;
+
   }
 
 

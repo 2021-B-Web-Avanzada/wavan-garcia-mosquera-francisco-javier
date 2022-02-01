@@ -1,6 +1,10 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {InputSwitchModule} from 'primeng/inputswitch';
+import {KnobModule} from 'primeng/knob';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
+import {SplitButtonModule} from 'primeng/splitbutton';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RutaLoginComponent } from './rutas/ruta-login/ruta-login.component';
@@ -16,8 +20,11 @@ import {EsAdministradorGuard} from "./servicios/auth/es-administrador.guard";
 import {BannerImagenesComponent} from "./componentes/banner-imagenes/banner-imagenes/banner-imagenes.component";
 import {BannerImagenesModule} from "./componentes/banner-imagenes/banner-imagenes.module";
 import {HttpClientModule} from "@angular/common/http";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
+import { ModalEjemploComponent } from './componentes/modales/modal-ejemplo/modal-ejemplo.component';
+import { NgbButtonsModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgModule } from '@angular/core';
 
 
 @NgModule({
@@ -32,7 +39,8 @@ import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usu
     RutaUsuarioComponent,
     RutaPostComponent,
     RutaAppComponent,
-    RutaUsuarioPerfilComponent
+    RutaUsuarioPerfilComponent,
+    ModalEjemploComponent
   ],
 
   //modulos
@@ -41,7 +49,16 @@ import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usu
     AppRoutingModule,
     BannerImagenesModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    InputSwitchModule,
+    KnobModule,
+    SplitButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    NgbModule,
+    NgbButtonsModule
   ],
 
   //servicios
@@ -52,6 +69,8 @@ import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usu
   ],
 
   //componente principal, aquí empieza todo
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

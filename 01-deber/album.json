@@ -1,24 +1,24 @@
 [
 	{
 		"titulo": "Cuartos de Atrás",
-		"artista": "Beatles",
-		"recopilatorio": false,
-		"productor": "Martin",
-		"anio": 1964,
+		"artista": "Lolabum",
+		"recopilatorio": true,
+		"productor": "Francisco García M.",
+		"anio": 2017,
 		"canciones": []
 	},
 	{
 		"titulo": "Love",
 		"artista": "Beatles",
 		"recopilatorio": false,
-		"productor": "Mertin",
-		"anio": 2007,
+		"productor": "Francisco García M.",
+		"anio": 2006,
 		"canciones": [
 			{
 				"titulo": "Airbag",
+				"duracion": 62,
 				"explicito": true,
-				"duracion": 56,
-				"artistaSecundario": null
+				"artistaSecundario": "Comic"
 			}
 		]
 	},
@@ -28,6 +28,29 @@
 		"recopilatorio": true,
 		"productor": "Martin",
 		"anio": 2000,
+		"canciones": [
+			{
+				"titulo": "Boy",
+				"duracion": 45,
+				"explicito": true,
+				"artistaSecundario": null
+			}
+		]
+	},
+	{
+		"titulo": "NEU!",
+		"artista": "Pi",
+		"recopilatorio": false,
+		"productor": "Rubin",
+		"anio": 2017,
+		"canciones": []
+	},
+	{
+		"titulo": "Comic",
+		"artista": "Comic",
+		"recopilatorio": true,
+		"productor": "Francisco García M.",
+		"anio": 2019,
 		"canciones": []
 	}
 ]

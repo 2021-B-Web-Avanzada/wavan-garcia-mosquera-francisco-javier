@@ -1,0 +1,65 @@
+<h2 class="d-flex justify-content-center" >Nuevo Álbum</h2>
+<div class="container">
+  <form [formGroup]="formGroup" *ngIf="formGroup">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">
+        Título
+      </label>
+      <input type="text" formControlName="titulo" class="form-control" id="titulo" aria-describedby="text">
+      <div id="tituloHelp" class="form-text">
+        Ingrese el título del álbum
+      </div>
+    </div>
+
+
+    <!--    Artista -->
+    <div class="mb-3">
+      <label for="artista" class="form-label">
+        Artista
+      </label>
+      <input type="text" formControlName="artista" class="form-control" id="artista" aria-describedby="artistaHelp">
+      <div id="artistaHelp" class="form-text">
+        Ingrese el artista del álbum.
+      </div>
+    </div>
+
+    <!--    recopilatorio -->
+    <div class="mb-3">
+      <label for="recopilatorio" class="form-label">
+        ¿Es recopilatorio?
+      </label>
+      <input type=checkbox formControlName="recopilatorio" class="form-check-input" id="recopilatorio"
+             aria-describedby="recopilatorioHelp">
+      <div id="recopilatorioHelp" class="form-text">
+        Indique si el álbum es recopilatorio.
+      </div>
+    </div>
+
+    <!--  productor -->
+    <div class="mb-3">
+      <label for="productor" class="form-label">
+        Productor
+      </label>
+      <input type="text" formControlName="productor" class="form-control" id="productor"
+             aria-describedby="productorHelp">
+      <div id="productorHelp" class="form-text">
+        Ingrese el productor.
+      </div>
+    </div>
+
+    <!--año-->
+    <div class="mb-3">
+      <label for="anio" class="form-label">
+        Año
+      </label>
+      <input type="year" class="form-control" formControlName="anio" id="anio" aria-describedby="anioHelp">
+      <div id="anioHelp" class="form-text">
+        Ingrese el año de lanzamiento.
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="crearAlbum()">
+      GUARDAR
+    </button>
+  </form>
+</div>

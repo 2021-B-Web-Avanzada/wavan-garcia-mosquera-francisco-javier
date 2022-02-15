@@ -1,0 +1,67 @@
+<h2 class="d-flex justify-content-center" >Nueva Canción</h2>
+<div class="container">
+  <form [formGroup]="formGroup" *ngIf="formGroup">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">
+        Título
+      </label>
+      <input type="text" class="form-control" formControlName="titulo" id="titulo" aria-describedby="text">
+      <div id="tituloHelp" class="form-text">
+        Ingrese el título de la canción
+      </div>
+    </div>
+
+    <!--    name -->
+    <div class="mb-3">
+      <label for="duracion" class="form-label">
+        Duración
+      </label>
+      <input type="number" class="form-control" formControlName="duracion" id="duracion"
+             aria-describedby="duracionHelp">
+      <div id="duracionHelp" class="form-text">
+        Ingrese la duración de la canción en segundos.
+      </div>
+    </div>
+
+    <!--    explicito -->
+    <div class="mb-3">
+      <label for="explicito" class="form-label">
+        ¿Es explícito?
+      </label>
+      <input type=checkbox class="form-check-input" formControlName="explicito" id="explicito"
+             aria-describedby="explicitoHelp">
+      <div id="explicitoHelp" class="form-text">
+        Ingrese si la canción es explícita.
+      </div>
+    </div>
+
+    <!--    artista secundario -->
+    <div class="mb-3">
+      <label for="artistaSecundario" class="form-label">
+        Artista Secundario
+      </label>
+      <input type="text" class="form-control" formControlName="artistaSecundario" id="artistaSecundario"
+             aria-describedby="artistaSecundarioHelp">
+      <div id="artistaSecundarioHelp" class="form-text">
+        Ingrese el artista secundario, si no aplica déjelo en blanco.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="album" class="form-label">
+        Álbum al que pertenece la canción
+      </label>
+      <select type="number" class="form-select" formControlName="album" id="album"
+              aria-describedby="albumHelp" multiple aria-label="multiple select example">
+        <option *ngFor="let album of arregloDeAlbums;let indexOfelement=index;" value=indexOfelement
+                [ngValue]="indexOfelement">{{album}}</option>
+      </select>
+      <div id="albumHelp" class="form-text">
+        Seleccione el álbum al que pertenece la canción
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="crearCancion()">
+      GUARDAR
+    </button>
+  </form>
+</div>

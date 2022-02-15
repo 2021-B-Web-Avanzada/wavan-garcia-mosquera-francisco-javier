@@ -25,11 +25,13 @@ import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usu
 import { ModalEjemploComponent } from './componentes/modales/modal-ejemplo/modal-ejemplo.component';
 import { NgbButtonsModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgModule } from '@angular/core';
+import {SocketIoModule} from "ngx-socket-io";
+import { RutaSalaComponent } from './rutas/ruta-sala/ruta-sala.component';
 
 
 @NgModule({
 
-  //componentes
+  //rutas
   declarations: [
     AppComponent,
     RutaLoginComponent,
@@ -40,7 +42,8 @@ import { NgModule } from '@angular/core';
     RutaPostComponent,
     RutaAppComponent,
     RutaUsuarioPerfilComponent,
-    ModalEjemploComponent
+    ModalEjemploComponent,
+    RutaSalaComponent
   ],
 
   //modulos
@@ -58,7 +61,11 @@ import { NgModule } from '@angular/core';
     MatButtonModule,
     MatDialogModule,
     NgbModule,
-    NgbButtonsModule
+    NgbButtonsModule,
+    SocketIoModule.forRoot({
+      url:'ws://localhost:8080',
+      options:{}
+    })
   ],
 
   //servicios

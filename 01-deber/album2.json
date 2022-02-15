@@ -1,0 +1,56 @@
+[
+	{
+		"titulo": "Cuartos de Atrás",
+		"artista": "Beatles",
+		"recopilatorio": false,
+		"productor": "Martin",
+		"anio": 1964,
+		"canciones": []
+	},
+	{
+		"titulo": "Love",
+		"artista": "Beatles",
+		"recopilatorio": false,
+		"productor": "Mertin",
+		"anio": 2007,
+		"canciones": [
+			{
+				"titulo": "Airbag",
+				"explicito": true,
+				"duracion": 56,
+				"artistaSecundario": "Comic"
+			}
+		]
+	},
+	{
+		"titulo": "Kid A",
+		"artista": "Radiohead",
+		"recopilatorio": true,
+		"productor": "Martin",
+		"anio": 2000,
+		"canciones": [
+			{
+				"titulo": "Idioteque",
+				"explicito": false,
+				"duracion": 45,
+				"artistaSecundario": null
+			}
+		]
+	},
+	{
+		"titulo": "NEU!",
+		"artista": "Pi",
+		"recopilatorio": false,
+		"productor": "Rubin",
+		"anio": 2017,
+		"canciones": []
+	},
+	{
+		"titulo": "Comic",
+		"artista": "Comic",
+		"recopilatorio": false,
+		"productor": "Francisco García M.",
+		"anio": 2021,
+		"canciones": []
+	}
+]

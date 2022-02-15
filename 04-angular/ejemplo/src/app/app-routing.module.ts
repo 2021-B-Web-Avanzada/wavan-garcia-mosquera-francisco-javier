@@ -10,6 +10,7 @@ import {RutaAppComponent} from "./rutas/ruta-app/ruta-app.component";
 import {EstaLogueadoGuard} from "./servicios/auth/esta-logueado.guard";
 import {EsAdministradorGuard} from "./servicios/auth/es-administrador.guard";
 import {RutaUsuarioPerfilComponent} from "./rutas/ruta-usuario-perfil/ruta-usuario-perfil.component";
+import {RutaSalaComponent} from "./rutas/ruta-sala/ruta-sala.component";
 
 
 //login
@@ -23,6 +24,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: RutaLoginComponent,
+  },
+  {
+    path: ':salaId/sala/:nombre',
+    component: RutaSalaComponent,
   },
   {
     path:'lazy-inventario',

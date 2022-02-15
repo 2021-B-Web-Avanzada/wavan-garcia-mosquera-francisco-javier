@@ -4,7 +4,7 @@ import {EventosGateway} from "./eventos-gateway";
 @Module({
     providers: [
         EventosGateway
-    ],
+    ]
 })
 
 export class EventosModule {

@@ -1,10 +1,16 @@
 const express = require('express');
 const app = express();
 const controlador = require('./controlador')
+var cors = require('cors')
+
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 //Configuraciones
 app.set('port', process.env.PORT || 3000);
 app.set('json spaces', 2)
+app.use(cors())
 
 //http://localhost:3000/album/
 app.get('/album/', (req, res) => {
@@ -61,12 +67,19 @@ app.get('/cancion/:id', (req, res) => {
 })
 
 //http://localhost:3000/album/NEU!&PinkFloyd&false&Rubin&1975
-app.post('/album/:titulo&:artista&:recopilatorio&:productor&:anio', (req, res) => {
-    let titulo = req.params.titulo
+//:titulo&:artista&:recopilatorio&:productor&:anio
+app.post('/album', (req, res) => {
+    /*let titulo = req.params.titulo
     let artista = req.params.artista
     let recopilatorio = Boolean(req.params.recopilatorio)
     let productor = req.params.productor
-    let anio = Number(req.params.anio)
+    let anio = Number(req.params.anio)*/
+
+    let titulo = req.body.titulo
+    let artista = req.body.artista
+    let recopilatorio = Boolean(req.body.recopilatorio)
+    let productor = req.body.productor
+    let anio = Number(req.body.anio)
 
     try {
         let datosAlbum={
@@ -88,11 +101,19 @@ app.post('/album/:titulo&:artista&:recopilatorio&:productor&:anio', (req, res) =
 })
 
 //http://localhost:3000/cancion/MySweetLord&456&false&false&1
-app.post('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:indiceAlbum', (req, res) => {
-    let titulo = req.params.titulo
+///:indiceAlbum&:titulo&:duracion&:explicito&:artistaSecundario
+app.post('/cancion/:indiceAlbum', (req, res) => {
+    /*let titulo = req.params.titulo
     let duracion = Number(req.params.duracion)
     let explicito = Boolean(req.params.explicito)
     let artistaSecundario = req.params.artistaSecundario
+    let indiceAlbum = Number(req.params.indiceAlbum)*/
+
+
+    let titulo = req.body.titulo
+    let duracion = Number(req.body.duracion)
+    let explicito = Boolean(req.body.explicito)
+    let artistaSecundario = req.body.artistaSecundario
     let indiceAlbum = Number(req.params.indiceAlbum)
 
     try {
@@ -113,13 +134,15 @@ app.post('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:indiceAlbum'
     }
 })
 
-//http://localhost:3000/cancion/MySweetLord&456&false&false&1
-app.put('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:cancionAActualizar', (req, res) => {
-    let titulo = req.params.titulo
-    let duracion = Number(req.params.duracion)
-    let explicito = Boolean(req.params.explicito)
-    let artistaSecundario = req.params.artistaSecundario
+//http://localhost:3000/cancion/1&MySweetLord&456&false&false
+//&:titulo&:duracion&:explicito&:artistaSecundario
+app.put('/cancion/:cancionAActualizar', (req, res) => {
+    let titulo = req.body.titulo
+    let duracion = Number(req.body.duracion)
+    let explicito = Boolean(req.body.explicito)
+    let artistaSecundario = req.body.artistaSecundario
     let cancionAActualizar = Number(req.params.cancionAActualizar)
+
 
     try {
         let datosCancion={
@@ -129,6 +152,7 @@ app.put('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:cancionAActua
             artistaSecundario: artistaSecundario
         }
         controlador.actualizarCancion(datosCancion, cancionAActualizar)
+        console.log(datosCancion)
         res.json(controlador.mostrarCancion(cancionAActualizar))
     } catch (e) {
         res.json(
@@ -139,13 +163,14 @@ app.put('/cancion/:titulo&:duracion&:explicito&:artistaSecundario&:cancionAActua
     }
 })
 
-//http://localhost:3000/album/NEU!&PinkFloyd&false&Rubin&1975&1
-app.put('/album/:titulo&:artista&:recopilatorio&:productor&:anio&:albumAActualizar', (req, res) => {
-    let titulo = req.params.titulo
-    let artista = req.params.artista
-    let recopilatorio = Boolean(req.params.recopilatorio)
-    let productor = req.params.productor
-    let anio = Number(req.params.anio)
+//http://localhost:3000/album/1&NEU!&PinkFloyd&false&Rubin&1975
+//&:titulo&:artista&:recopilatorio&:productor&:anio
+app.put('/album/:albumAActualizar', (req, res) => {
+    let titulo = req.body.titulo
+    let artista = req.body.artista
+    let recopilatorio = Boolean(req.body.recopilatorio)
+    let productor = req.body.productor
+    let anio = Number(req.body.anio)
     let albumAActualizar = Number(req.params.albumAActualizar)
 
     try {

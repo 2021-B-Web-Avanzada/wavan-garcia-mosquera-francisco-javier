@@ -4,7 +4,7 @@ export interface AlbumInterface{
   recopilatorio: undefined;//boolean/undefined
   productor: string;
   anio: null;//number,
-  canciones: []
+  canciones: [] 
 }
 
 export interface AlbumAActualizarInterface{
